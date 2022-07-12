@@ -14,13 +14,14 @@ class App {
     }
 
     public function runApp(){
-        if(isset($_GET)){
-            $routing = new Routing('a');
-            $routing->lanzarIndex();
+        $routing = new Routing($this->url);
+        if(isset($_GET) && !empty($_GET)){
+           
         }
-        if(isset($_POST)){
-            $routing = new Routing($_POST);
+        if(isset($_POST) && !empty($_POST)){
+           
         }
+        $routing->lanzarIndex();
     }
 }
 $app = new App();
