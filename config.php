@@ -9,11 +9,6 @@ define('dbpass', '');
 
 //headers para post
 
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-header('Content-Type: application/json; charset=utf-8');
-
 //lanzamiento de modelo, controlador y rutas
 
 require_once('./Modelos/Cliente.php');

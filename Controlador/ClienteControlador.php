@@ -13,15 +13,6 @@ class ClienteControlador extends App{
         $this->rutas = new Routing($this->url);
     }
     //Aquí puedes crear los métodos que quieras del controlador, funcionaría como cualquier controlador.
-    public function index(String $endpoint, array $params){
-        $cliente = new Cliente();
-        $array = array('nombre'=>'Dawn', 'apellidos'=>'Fowler Thornton', 'usuario'=>'GC5', 'contrasena'=>'72D', 'mail'=>'cum.sociis@hotmail.com');
-        $cliente->setCliente($array);
-        $this->rutas->cargarVistaGet('Vista', $cliente);
-    }
-    public function cargarOtraPagina(String $endpoint, array $params){
-        $this->rutas->cargarVistaGet('otravista', []);
-    }
 }
 
 ?>

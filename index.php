@@ -20,7 +20,11 @@ class App {
             $routing->otraPagina($_POST);
         }
         //Aquí iría la página de inicio
-        echo var_dump($_POST, headers_list());
+    }
+
+    function __destruct(){
+        $_POST = array();
+        $_GET = array();
     }
 }
 $app = new App();
