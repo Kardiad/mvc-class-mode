@@ -11,15 +11,24 @@ class App {
 
     public function runApp(){
         $routing = new Routing($this->url);
-        //Rutas que quieres que se ejecuten por get
+        $haEntrado = false;
+        //Rutas que quieres que se ejecuten por get tiene que haber un parámetro ?url='[nombre del archivo a acceder]'
+        var_dump($_GET);
+        var_dump($_POST);
         if(isset($_GET) && !empty($_GET) && $_GET['url']!=''){
-            $routing->lanzarIndex($_GET);
+            $routing->lanzarInicio();
+            $haEntrado=true;
         }
-        //Rutas que quieres que se ejecuten por post
+        /*Rutas que quieres que se ejecuten por post tiene que pasarse un parámetro recomendable usar ajax ç
+        para menos quebraderos url='[nombre del archivo a acceder]'*/
         if(isset($_POST) && !empty($_POST) && $_POST['url']!=''){
-            $routing->otraPagina($_POST);
+            $haEntrado=true;
+            //$routing->otraPagina($_POST);
         }
         //Aquí iría la página de inicio
+        if(!$haEntrado){
+            $routing->index();
+        }
     }
 
     function __destruct(){

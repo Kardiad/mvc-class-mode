@@ -13,6 +13,9 @@ class ClienteControlador extends App{
         $this->rutas = new Routing($this->url);
     }
     //Aquí puedes crear los métodos que quieras del controlador, funcionaría como cualquier controlador.
+    function cargarInicio(){
+        $this->rutas->cargarVistaGet('Inicio', []);
+    }
 }
 
 ?>

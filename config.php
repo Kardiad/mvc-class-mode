@@ -7,8 +7,6 @@ define('dbcontent', 'mysql:dbname=tienda;host=127.0.0.1');
 define('dbuser', 'root');
 define('dbpass', '');
 
-//headers para post
-
 //lanzamiento de modelo, controlador y rutas
 
 require_once('./Modelos/Cliente.php');

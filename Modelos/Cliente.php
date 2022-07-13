@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Tienda\Modelos;
-
 
 class Cliente{
     public String $nombre;

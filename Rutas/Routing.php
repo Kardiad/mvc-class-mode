@@ -11,7 +11,7 @@ class Routing extends App{
     //renderiza búsqueda en caso de que se haya hecho get a la ruta previamente parametrizada en controlador
     public function cargarVistaGet(String $endpoint, $params){
         try{
-            if($endpoint==$_GET['url']){
+            if($endpoint==$_GET['url'] && empty($_POST)){
                 include_once('Vista/Complementos/Header.php');
                 include_once('Vista/'.$endpoint.'.php');
                 include_once('Vista/Complementos/Footer.php');
@@ -25,7 +25,7 @@ class Routing extends App{
     //renderiza búsqueda en caso de que se haya hecho post a la ruta previamente parametrizada en controlador
     public function cargarVistaPost(String $endpoint, $params){
         try{
-            if($endpoint==$_POST['url']){
+            if($endpoint==$_POST['url'] && empty($_POST)){
                 include_once('Vista/Complementos/Header.php');
                 include_once('Vista/'.$endpoint.'.php');
                 include_once('Vista/Complementos/Footer.php');
@@ -37,8 +37,18 @@ class Routing extends App{
         }
         
     }
-    //Aquí se da de alta a todas las rutas instanciando al controlador y al método que hagas dentro del controlador. 
+
+    public function index(){
+        include_once('Vista/Complementos/Header.php');
+        include_once('Vista/Inicio.php');
+        include_once('Vista/Complementos/Footer.php');
+    }
     
+    //Aquí se da de alta a todas las rutas instanciando al controlador y al método que hagas dentro del controlador. 
+    public function lanzarInicio(){
+        $controller = new ClienteControlador();
+        $controller->cargarInicio();
+    }
 }
 
 ?>
