@@ -2,20 +2,14 @@
 
 
 namespace Tienda\Modelos;
-require_once('MasterModel.php');
 
-use App\Modelos\MasterModel;
 
-class Cliente extends MasterModel{
+class Cliente{
     public String $nombre;
     public String $apellidos;
     public String $usuario;
     public String $contrasena;
     public String $mail;
-
-    function __construct(){
-        parent::__construct();
-    }
 
     public function setCliente(array $params){
         $this->nombre = $params['nombre'];

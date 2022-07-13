@@ -9,19 +9,18 @@ class App {
     public $user = dbuser;
     public $pass = dbpass;
 
-    function __construct(){
-        require_once('config.php');
-    }
-
     public function runApp(){
         $routing = new Routing($this->url);
-        if(isset($_GET) && !empty($_GET)){
-           
+        //Rutas que quieres que se ejecuten por get
+        if(isset($_GET) && !empty($_GET) && $_GET['url']!=''){
+            $routing->lanzarIndex($_GET);
         }
-        if(isset($_POST) && !empty($_POST)){
-           
+        //Rutas que quieres que se ejecuten por post
+        if(isset($_POST) && !empty($_POST) && $_POST['url']!=''){
+            $routing->otraPagina($_POST);
         }
-        $routing->lanzarIndex();
+        //Aquí iría la página de inicio
+        echo var_dump($_POST, headers_list());
     }
 }
 $app = new App();

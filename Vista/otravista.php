@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Holamundo</h1>
-    <p>Soy : <?php echo $params->nombre.' '.$params->apellidos?></p>
+    <h1>Esto es otra vista</h1>
 </body>
 </html>
