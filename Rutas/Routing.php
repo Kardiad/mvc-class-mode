@@ -16,7 +16,7 @@ class Routing extends App{
                 include_once('Vista/'.$endpoint.'.php');
                 include_once('Vista/Complementos/Footer.php');
             }else{
-                echo 'no tienes acceso a esta página con ese método';
+                echo 'Ese metodo Post no abre mi vista';
             }
         }catch(Exception $e){
             echo 'Ha ocurrido un error '.$e->getMessage();
@@ -25,12 +25,12 @@ class Routing extends App{
     //renderiza búsqueda en caso de que se haya hecho post a la ruta previamente parametrizada en controlador
     public function cargarVistaPost(String $endpoint, $params){
         try{
-            if($endpoint==$_POST['url'] && empty($_POST)){
+            if($endpoint==$_POST['url']){
                 include_once('Vista/Complementos/Header.php');
                 include_once('Vista/'.$endpoint.'.php');
                 include_once('Vista/Complementos/Footer.php');
             }else{
-                echo 'no tienes acceso a esta página con ese método';
+                echo 'ese método Get no abre mi vista';
             }
         }catch(Exception $e){
             echo 'Ha ocurrido un error '.$e->getMessage();
@@ -48,6 +48,18 @@ class Routing extends App{
     public function lanzarInicio(){
         $controller = new ClienteControlador();
         $controller->cargarInicio();
+    }
+
+    public function ejecutarGets(){
+        $controller = new ClienteControlador();
+        $controller->cargarInicio();
+        $controller->cargarOtroInicio();
+        $controller->cargarTercerInicio();
+    }
+
+    public function ejecutarPosts(){
+        $controller = new ClienteControlador();
+        $controller->lanzarPostInicio();
     }
 }
 

@@ -16,6 +16,16 @@ class ClienteControlador extends App{
     function cargarInicio(){
         $this->rutas->cargarVistaGet('Inicio', []);
     }
+    function cargarOtroInicio(){
+        $this->rutas->cargarVistaGet('otroInicio', []);
+    }
+    function cargarTercerInicio(){
+        $this->rutas->cargarVistaGet('tercerInicio', []);
+    }
+
+    public function lanzarPostInicio(){
+        $this->rutas->cargarVistaPost('postInicio', []);
+    }
 }
 
 ?>
