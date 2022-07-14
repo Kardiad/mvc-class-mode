@@ -63,6 +63,7 @@ class Routing extends App{
         $controller->lanzarPostInicio();
         $controller->cargarInicio();
         $controller->ajaxUsuarios();
+        $controller->polnarefu();
     }
 
     public function ejecutarPosts(){

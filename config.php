@@ -12,6 +12,7 @@ define('dbpass', '');
 //lanzamiento de modelo, controlador y rutas
 
 require_once('./Modelos/Cliente.php');
+require_once('./Modelos/Factura.php');
 require_once('./Controlador/ClienteControlador.php');
 require_once('./Rutas/Routing.php');
 require_once('./Helpers/helper.php');

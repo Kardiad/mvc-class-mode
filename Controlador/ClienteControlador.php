@@ -2,7 +2,7 @@
 namespace App\Controlador;
 use App\Rutas\Routing;
 use Tienda\App\App;
-use Tienda\Modelos\Usuario;
+use Tienda\Modelos\{Usuario, Factura};
 
 class ClienteControlador extends App{
     //Instancia una ruta del servidor que puede que se use posteriormente, en caso de que no lo quitaré porque ocupa en memoria.
@@ -41,6 +41,14 @@ class ClienteControlador extends App{
             $usuarios = new Usuario();
             $clientes = $usuarios->obtenerTodosClientes();
             echo json_encode($clientes);
+        }
+    }
+
+    public function polnarefu(){
+        if($_GET['url']=='polnarefu'){
+            $facturas = new Factura();
+            $pagos = $facturas->obtenerFacturasConPropietarios();
+            $this->rutas->cargarVistaGet('otroInicio', ['pago'=>$pagos], true);
         }
     }
 }

@@ -9,7 +9,7 @@
     <input type="mail" name="mail" placeholder="mail">
     <input type="submit" value="pincha">
 </form>
-
+<a href="<?=url_route?>polnarefu">Polnarefu</a>
 <a href="<?=url_route?>postInicio">Pincha para ver usuarios</a>
 <button id="btn"> Json con clientes </button>
 <table>
