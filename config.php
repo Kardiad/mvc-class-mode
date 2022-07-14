@@ -14,5 +14,6 @@ define('dbpass', '');
 require_once('./Modelos/Cliente.php');
 require_once('./Controlador/ClienteControlador.php');
 require_once('./Rutas/Routing.php');
+require_once('./Helpers/helper.php');
 
 ?>

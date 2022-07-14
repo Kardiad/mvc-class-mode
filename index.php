@@ -12,14 +12,13 @@ class App {
 
     public function runApp(){
         $routing = new Routing($this->url);
-        $haEntrado = false;
+        $haEntrado = false; //Sirve para la primera ejecución que vaya a index, en caso contrario no va a ningún lado
          /*Rutas que quieres que se ejecuten por post tiene que pasarse un parámetro recomendable usar ajax ç
         para menos quebraderos url='[nombre del archivo a acceder]'*/
         if(isset($_POST) && !empty($_POST)){
             $_POST['url']=$_GET['url'];
             $routing->ejecutarPosts();
             $haEntrado=true;
-            //$routing->otraPagina($_POST);
         }
         //Rutas que quieres que se ejecuten por get tiene que haber un parámetro ?url='[nombre del archivo a acceder]'
         if(isset($_GET) && !empty($_GET) && $_GET['url']!='' && empty($_POST)){
@@ -30,11 +29,6 @@ class App {
         if(!$haEntrado){
             $routing->index();
         }
-    }
-
-    function __destruct(){
-        $_POST = array();
-        $_GET = array();
     }
 }
 $app = new App();

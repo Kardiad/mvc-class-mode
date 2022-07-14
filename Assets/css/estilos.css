@@ -2,6 +2,13 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: yellow;
 }
 
+table{
+    border: 1px double black;
+}
+
+td{
+    text-align: center;
+    border: 1px double grey;
+}

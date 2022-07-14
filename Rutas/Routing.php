@@ -9,28 +9,36 @@ use Tienda\App\App;
 class Routing extends App{
     
     //renderiza búsqueda en caso de que se haya hecho get a la ruta previamente parametrizada en controlador
-    public function cargarVistaGet(String $endpoint, $params){
+    public function cargarVistaGet(String $endpoint, $params, bool $redirect){
         try{
             if($endpoint==$_GET['url'] && empty($_POST)){
                 include_once('Vista/Complementos/Header.php');
                 include_once('Vista/'.$endpoint.'.php');
                 include_once('Vista/Complementos/Footer.php');
+            }else if($redirect){
+                include_once('Vista/Complementos/Header.php');
+                include_once('Vista/'.$endpoint.'.php');
+                include_once('Vista/Complementos/Footer.php');
             }else{
-                echo 'Ese metodo Post no abre mi vista';
+                return false;
             }
         }catch(Exception $e){
             echo 'Ha ocurrido un error '.$e->getMessage();
         }
     }
     //renderiza búsqueda en caso de que se haya hecho post a la ruta previamente parametrizada en controlador
-    public function cargarVistaPost(String $endpoint, $params){
+    public function cargarVistaPost(String $endpoint, $params, bool $redirect){
         try{
             if($endpoint==$_POST['url']){
                 include_once('Vista/Complementos/Header.php');
                 include_once('Vista/'.$endpoint.'.php');
                 include_once('Vista/Complementos/Footer.php');
+            }else if($redirect){
+                include_once('Vista/Complementos/Header.php');
+                include_once('Vista/'.$endpoint.'.php');
+                include_once('Vista/Complementos/Footer.php');
             }else{
-                echo 'ese método Get no abre mi vista';
+                return false;
             }
         }catch(Exception $e){
             echo 'Ha ocurrido un error '.$e->getMessage();
@@ -52,6 +60,7 @@ class Routing extends App{
 
     public function ejecutarGets(){
         $controller = new ClienteControlador();
+        $controller->lanzarPostInicio();
         $controller->cargarInicio();
         $controller->cargarOtroInicio();
         $controller->cargarTercerInicio();
@@ -59,7 +68,9 @@ class Routing extends App{
 
     public function ejecutarPosts(){
         $controller = new ClienteControlador();
-        $controller->lanzarPostInicio();
+        //$controller->lanzarPostInicio();
+        $controller->insertarUsuario();
+        return false;
     }
 }
 
