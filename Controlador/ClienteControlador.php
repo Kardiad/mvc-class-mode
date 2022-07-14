@@ -35,6 +35,14 @@ class ClienteControlador extends App{
             $this->rutas->cargarVistaPost('Inicio', [], true);
         }
     }
+
+    public function ajaxUsuarios(){
+        if($_GET['url']=='walter'){
+            $usuarios = new Usuario();
+            $clientes = $usuarios->obtenerTodosClientes();
+            echo json_encode($clientes);
+        }
+    }
 }
 
 ?>

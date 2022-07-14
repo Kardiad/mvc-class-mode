@@ -16,7 +16,6 @@ class Usuario{
     }
 
     public function setCliente(array $params){
-        var_dump($params);
         $this->nombre = $params['nombre'];
         $this->apellidos = $params['apellidos'];
         $this->usuario = $params['usuario'];

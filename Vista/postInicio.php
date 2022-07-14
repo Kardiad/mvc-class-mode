@@ -14,3 +14,4 @@
     }
     echo '</table>';
 ?>
+<a href="<?=url_route?>Inicio">Te llevo al inicio</a>

@@ -62,13 +62,11 @@ class Routing extends App{
         $controller = new ClienteControlador();
         $controller->lanzarPostInicio();
         $controller->cargarInicio();
-        $controller->cargarOtroInicio();
-        $controller->cargarTercerInicio();
+        $controller->ajaxUsuarios();
     }
 
     public function ejecutarPosts(){
         $controller = new ClienteControlador();
-        //$controller->lanzarPostInicio();
         $controller->insertarUsuario();
         return false;
     }

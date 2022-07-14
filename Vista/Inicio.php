@@ -11,3 +11,16 @@
 </form>
 
 <a href="<?=url_route?>postInicio">Pincha para ver usuarios</a>
+<button id="btn"> Json con clientes </button>
+<table>
+    <tr>
+        <td>Nombre</td>
+        <td>Apellidos</td>
+        <td>Usuario</td>
+        <td>Contraseña</td>
+        <td>Mail</td>
+    </tr>
+    <tbody id="tabla">
+
+    </tbody>
+</table>
