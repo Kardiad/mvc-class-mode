@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Rutas;
-
-use App\Controlador\ClienteControlador;
+namespace Rutas;
+use Controlador\ClienteControlador;
 use Exception;
-use Tienda\App\App;
+use App\App\App;
 
 class Routing extends App{
     

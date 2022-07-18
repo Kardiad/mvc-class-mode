@@ -9,12 +9,19 @@ define('url_route', $baseUri.'?url=');
 define('dbcontent', 'mysql:dbname=tienda;host=127.0.0.1');
 define('dbuser', 'root');
 define('dbpass', '');
-//lanzamiento de modelo, controlador y rutas
 
-require_once('./Modelos/Cliente.php');
-require_once('./Modelos/Factura.php');
-require_once('./Controlador/ClienteControlador.php');
-require_once('./Rutas/Routing.php');
-require_once('./Helpers/helper.php');
+//Autoloader, cuidado con los namespaces, todos ellos tienen que venir del padre, es decir, no hace falta poner al padre, lo entiende de manera predefinida que vienen desde el 
+//archivo donde se hace la llamada. Otra nota, es obligatorio poner los nombres al igual que el archivo y tal. 
+
+function autoloader($clase){
+    $url = $clase.'.php';
+    if(file_exists($url)){
+        include_once $url;
+    }else{
+        var_dump($url);
+    }
+}
+
+spl_autoload_register('autoloader');
 
 ?>

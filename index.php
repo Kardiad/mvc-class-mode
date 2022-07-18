@@ -1,8 +1,8 @@
 <?php
-namespace Tienda\App;
-
-use App\Rutas\Routing;
+namespace App\App;
+use Rutas\Routing;
 require_once('config.php');
+
 
 class App {
     public $url = base_url;

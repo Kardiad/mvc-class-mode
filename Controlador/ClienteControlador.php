@@ -1,8 +1,9 @@
 <?php
-namespace App\Controlador;
-use App\Rutas\Routing;
-use Tienda\App\App;
-use Tienda\Modelos\{Usuario, Factura};
+namespace Controlador;
+use Rutas\Routing;
+use App\App\App;
+use Modelos\Factura;
+use Modelos\Usuario;
 
 class ClienteControlador extends App{
     //Instancia una ruta del servidor que puede que se use posteriormente, en caso de que no lo quitaré porque ocupa en memoria.

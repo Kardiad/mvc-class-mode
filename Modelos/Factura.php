@@ -1,6 +1,6 @@
 <?php
 
-namespace Tienda\Modelos;
+namespace Modelos;
 use PDO;
 
 class Factura{
